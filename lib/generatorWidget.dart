@@ -34,7 +34,8 @@ class _GeneratorWidgetState extends State<GeneratorWidget> {
           ElevatedButton(
               onPressed: () {
                 setState(() {
-                  generatedNumber = Random().nextInt(widget.maxNumber);
+                  generatedNumber = widget.minNumber +
+                      Random().nextInt(widget.maxNumber + 1 - widget.minNumber);
                 });
               },
               child: const Text('Generate')),
